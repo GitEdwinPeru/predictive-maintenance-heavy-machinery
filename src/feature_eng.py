@@ -6,7 +6,7 @@ def procesar_caracteristicas():
     ruta_raw = os.path.join('data', 'raw', 'telemetria_cat_raw.csv')
     
     if not os.path.exists(ruta_raw):
-        print("❌ Error: No se encuentra el archivo raw. Ejecuta primero data_ingestion.py")
+        print(" Error: No se encuentra el archivo raw. Ejecuta primero data_ingestion.py")
         return
 
     df = pd.read_csv(ruta_raw)
@@ -32,8 +32,8 @@ def procesar_caracteristicas():
     os.makedirs(os.path.dirname(ruta_processed), exist_ok=True)
     
     df.to_csv(ruta_processed, index=False)
-    print(f"✅ Fase 2 completada. Datos procesados guardados en: {ruta_processed}")
-    print(f"📊 Total de fallas detectadas para entrenamiento: {df['falla'].sum()}")
+    print(f" Fase 2 completada. Datos procesados guardados en: {ruta_processed}")
+    print(f" Total de fallas detectadas para entrenamiento: {df['falla'].sum()}")
 
 if __name__ == "__main__":
     procesar_caracteristicas()

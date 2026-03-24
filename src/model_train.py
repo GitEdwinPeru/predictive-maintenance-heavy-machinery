@@ -19,20 +19,20 @@ def entrenar_modelo():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # 4. Crear y entrenar el modelo (Random Forest)
-    print("🧠 Entrenando el cerebro de la IA...")
+    print(" Entrenando el cerebro de la IA...")
     modelo = RandomForestClassifier(n_estimators=100, random_state=42)
     modelo.fit(X_train, y_train)
 
     # 5. Evaluación
     predicciones = modelo.predict(X_test)
-    print("\n✅ Evaluación del Modelo:")
+    print("\n Evaluación del Modelo:")
     print(classification_report(y_test, predicciones))
 
     # 6. Guardar el modelo entrenado en la carpeta 'models/'
     # Esto permite usarlo después sin volver a entrenar
     ruta_modelo = os.path.join('models', 'modelo_predictivo_cat.pkl')
     joblib.dump(modelo, ruta_modelo)
-    print(f"\n💾 Modelo guardado profesionalmente en: {ruta_modelo}")
+    print(f"\n Modelo guardado profesionalmente en: {ruta_modelo}")
 
 if __name__ == "__main__":
     entrenar_modelo()

@@ -37,7 +37,7 @@ def guardar_datos(df, nombre_archivo):
     
     # Guardamos sin el índice de pandas para que sea un CSV limpio
     df.to_csv(ruta_completa, index=False)
-    print(f"✅ Proceso exitoso: Se han generado {len(df)} registros en {ruta_completa}")
+    print(f"Proceso exitoso: Se han generado {len(df)} registros en {ruta_completa}")
 
 if __name__ == "__main__":
     # Ejecutamos la lógica principal
